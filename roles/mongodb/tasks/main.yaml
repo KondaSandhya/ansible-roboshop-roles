@@ -7,6 +7,7 @@
   ansible.builtin.dnf:
     name: mongodb-org
     state: present
+    update_cache: yes
 
 - name: Start and Enable mongod service
   ansible.builtin.service:
