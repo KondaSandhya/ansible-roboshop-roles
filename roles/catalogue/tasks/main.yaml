@@ -1,0 +1,36 @@
+  - name: Include Role app-setup
+    ansible.builtin.include_role:
+        name: common
+        tasks_from: app-setup
+
+  - name: Include Role nodejs
+    ansible.builtin.include_role:
+        name: common
+        tasks_from: nodejs
+  
+  - name: Copy mongodb repo file
+    ansible.builtin.copy:
+      src: mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo
+
+  - name: Install mongodb client
+    ansible.builtin.dnf:
+      name: mongodb-mongosh
+      state: present
+
+  - name: check data is loaded or
+    ansible.builtin.command: mongosh --host mongodb.devops84s.shop -eval "db.getMongo().getDBNames().indexOf('catalogue')"
+    register: mongo_output
+
+  - name: check mongo mongo_output
+    ansible.builtin.debug:
+      msg: '{{ mongo_output }}'
+      
+  - name: Load catalogue schema
+    ansible.builtin.shell: mongosh --host mongodb.devops84s.shop < /app/db/master-data.js
+    when: mongo_output.stdout == "-1" # or when: mongo_output.stdout | int < 0
+
+  - name: Include Role systemd
+    ansible.builtin.include_role:
+      name: common
+      tasks_from: systemd

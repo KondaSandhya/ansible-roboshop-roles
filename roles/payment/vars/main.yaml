@@ -1,0 +1,3 @@
+CART_HOST: cart.devops84s.shop
+USER_HOST: user.devops84s.shop
+RABBITMQ_HOST: rabbitmq.devops84s.shop

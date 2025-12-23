@@ -1,0 +1,5 @@
+CATALOGUE_HOST: catalogue.devops84s.shop
+USER_HOST: user.devops84s.shop
+CART_HOST: cart.devops84s.shop
+SHIPPING_HOST: shipping.devops84s.shop
+PAYMENT_HOST: payment.devops84s.shop
