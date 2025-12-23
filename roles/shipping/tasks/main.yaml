@@ -42,9 +42,9 @@
     # login_user: '{{ MYSQL_ROOT_USER }}'
     # login_password: '{{ MYSQL_ROOT_PASSWORD }}'
     # login_host: '{{ MYSQL_HOST }}'
-    login_user: root
-    login_password: RoboShop@1
-    login_host: mysql.devops84s.shop
+    login_user: 'root'
+    login_password: 'RoboShop@1'
+    login_host: 'mysql.devops84s.shop'
     state: import
     target: '{{ item }}'
   loop:
