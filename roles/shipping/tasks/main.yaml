@@ -44,7 +44,7 @@
     # login_host: '{{ MYSQL_HOST }}'
     login_user: root
     login_password: RoboShop@1
-    login_host: '{{ MYSQL_HOST }}'
+    login_host: mysql.devops84s.shop
     state: import
     target: '{{ item }}'
   loop:
