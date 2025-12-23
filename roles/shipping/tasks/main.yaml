@@ -39,9 +39,9 @@
 - name: import data
   community.mysql.mysql_db:
     name: all
-    login_user: '{{ user }}'
-    login_password: '{{ password }}'
-    login_host: '{{ host }}'
+    # login_user: '{{ user }}'
+    # login_password: '{{ password }}'
+    # login_host: '{{ host }}'
     state: import
     target: '{{ item }}'
   loop:
