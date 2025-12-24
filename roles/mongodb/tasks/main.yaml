@@ -3,11 +3,6 @@
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
-- name: Update all packages
-  ansible.builtin.dnf:
-    name: '*'
-    state: latest
-
 - name: install mongodb
   ansible.builtin.dnf:
     name: mongodb-org
