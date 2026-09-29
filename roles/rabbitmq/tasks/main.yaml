@@ -21,8 +21,8 @@
 #   ansible.builtin.command: rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
 - name: Create rabbitmq application user
   ansible.builtin.rabbitmq_user:
-    user: { { RABBITMQ_USER } }
-    password: { { RABBITMQ_PASSWORD } }
+    user: roboshop
+    password: roboshop123
     state: present
     permissions:
       - vhost: /
